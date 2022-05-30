@@ -8,3 +8,5 @@ def quitarelemento(tablero):
         tablero[filaSeleccion - 1][numeroElementosEliminar - 1] = ' '
         numeroElementosEliminar = numeroElementosEliminar - 1
     return tablero
+
+

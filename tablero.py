@@ -21,8 +21,3 @@ def imprimirtablero(tablero):
         for elemento in fila:
             print("%4s" % elemento, end="")
         print()
-
-
-tab = creartablero(6)
-
-print(tab[5].count('|'))
