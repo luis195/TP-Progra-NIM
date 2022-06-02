@@ -13,7 +13,7 @@ print('Necesita dos jugadores.\n Se basa en estrategias matemáticas o estrategi
 
 """Aqui unimos todas las funciones."""
 
-juegoTablero = tablero.creartablero(2)
+juegoTablero = tablero.creartablero(6)
 tablero.imprimirtablero(juegoTablero)
 jugador = 1
 

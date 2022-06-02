@@ -23,7 +23,5 @@ def imprimirtablero(tablero):
         print()
 
 
-tab = creartablero(6)
-imprimirtablero(tab)
 
 
