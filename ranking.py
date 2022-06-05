@@ -19,8 +19,10 @@ def cargar_rankings():
     except:
         print("Error")
     finally:
-
-        archivoRankings.close()
+        try:
+            archivoRankings.close()
+        except NameError:
+            pass
 
 def grabar_rankings():
     archivoRankings = None
