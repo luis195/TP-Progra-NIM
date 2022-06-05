@@ -1,20 +1,15 @@
-def leerNumeros (mensaje):
+def leerNumeros(mensaje):
     while True:
         try:
-            nro= float (input (mensaje))
-            
-            assert nro >= 0
+            nro = int(input(mensaje))
             break
                    
         except ValueError:
-            print ('Dato invalido, solo puede ingresarse números')
-            intento= input ('Desea ingresarlo otra vez? (S/N): ')
-            if intento.upper()== "N":
-                raise
-        except AssertionError:
-            print ('El número debe ser mayor a cero')
-            
+            print('Dato invalido')
+            print('Intentelo de nuevo')
+
     return nro
+
 
 def quitarelemento(tablero):
     filaSeleccion = leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: \n")
