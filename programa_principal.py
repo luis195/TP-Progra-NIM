@@ -16,8 +16,8 @@ juegoTablero = tablero.creartablero(CantidadFilas)
 tablero.imprimirtablero(juegoTablero)
 
 if (modoJugadores == presentacion.__MODO_HUMANO_HUMANO__):
-    jugador1 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 1: ')
-    jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
+    jugador1 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador: ')
+    jugador2 = utilidades.leeJugador ('Ingrese el nombre del segundo Jugador: ')
 else:
     jugador1 = presentacion.__NOMBRE_MAQUINA__
     jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
