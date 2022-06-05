@@ -1,6 +1,7 @@
 import seleccion_elemento
 import tablero
 
+
 titulo = "JUEGO DE NIM"
 titulo1 = titulo.center(60, "=")
 print(titulo1)
@@ -13,7 +14,29 @@ print('Necesita dos jugadores.\n Se basa en estrategias matemáticas o estrategi
 
 """Aqui unimos todas las funciones."""
 
-juegoTablero = tablero.creartablero(2)
+def leerNumeros (mensaje):
+    while True:
+        try:
+            nro= int (input (mensaje))
+            
+            assert nro >= 0 
+            break
+                   
+        except ValueError:
+            print ('Dato invalido, solo puede ingresarse números')
+            intento= input ('Desea ingresarlo otra vez? (S/N): ')
+            if intento.upper()== "N":
+                pass
+        except AssertionError:
+            print ('El número debe ser mayor a cero')
+            
+    return nro
+
+
+
+CantidadFilas = leerNumeros ('Ingrese la cantidad de filas que va tener el tablero: ')
+
+juegoTablero = tablero.creartablero(CantidadFilas)
 tablero.imprimirtablero(juegoTablero)
 jugador = 1
 
