@@ -1,8 +1,10 @@
+'''INDICA LOS MOVIMIENTOS DEL JUEGO '''
+
 import utilidades
 
 
-
 def quitarelemento(tablero):
+    """Elimna filas del tablero"""
     filaSeleccion = utilidades.leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: \n")
     numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: \n")
 
@@ -15,6 +17,7 @@ def quitarelemento(tablero):
 
 
 def hay_ganador(tablero):
+     """Indica quien se quedo con el último elemento"""
     fila = 0
     hayGanador = False
     cantidadElementos = 0

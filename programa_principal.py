@@ -32,12 +32,12 @@ jugador = utilidades.leeJugador ('Ingrese el nombre del primer Jugador: ')
 
 while not (seleccion_elemento.hay_ganador(juegoTablero)):
 
-    print("Jugador " + str(jugador) + " es su turno")
+    print("Jugador " + jugador + " es su turno")
 
     seleccion_elemento.quitarelemento(juegoTablero)
     tablero.imprimirtablero(juegoTablero)
 
     if seleccion_elemento.hay_ganador(juegoTablero):
-        print("El Jugador " + str(jugador) + " ha ganado")
+        print("El Jugador " + jugador + " ha ganado")
     else:
         jugador = utilidades.leeJugador ('Ingrese el nombre del primer Jugador: ')
