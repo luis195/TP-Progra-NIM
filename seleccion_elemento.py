@@ -1,14 +1,66 @@
-def leerNumeros(mensaje):
+def leerNumeros (mensaje):
     while True:
         try:
-            nro = int(input(mensaje))
+            nro= int (input (mensaje))
+            
+            assert nro >= 0 
             break
                    
         except ValueError:
-            print('Dato invalido')
-            print('Intentelo de nuevo')
-
+            print ('Dato invalido, solo puede ingresarse números')
+            intento= input ('Desea ingresarlo otra vez? (S/N): ')
+            if intento.upper()== "N":
+                pass
+        except AssertionError:
+            print ('El número debe ser mayor a cero')
+            
     return nro
+
+def leeJugador (mensaje):
+    while True:
+        try:
+            jugador= input (mensaje)
+            assert jugador.isalpha ()
+            break
+        except ValueError:
+            print ('Dato invalido, solo puede ingresarse letras')
+            intento= input ('Desea ingresarlo otra vez? (S/N): ')
+            if intento.upper()== "N":
+                pass
+        except AssertionError:
+            print ('Solo se permiten letras')
+            
+    return jugador
+
+def rankingDelJugador ():
+    try:
+        archivo= open ('Ranking.txt', 'wt')
+
+        contador= 1
+        jugador= leeJugador ('Ingrese el nombre del jugador:')
+
+        while contador < 2:
+            archivo.write (jugador + '\n')
+            jugador= leeJugador ('Ingrese el nombre del jugador:')
+            contador += 1
+                        
+    
+        print ('El archivo se grabo correctamente')
+        
+    except OSError as mensaje:
+        print ('No se puede grabar el archivo', mensaje)
+    finally:
+        try:
+            archivo.close ()
+        except NameError:
+            pass
+
+
+
+
+        
+
+
 
 
 def quitarelemento(tablero):
