@@ -17,7 +17,7 @@ def quitarelemento(tablero):
 
 
 def hay_ganador(tablero):
-     """Indica quien se quedo con el último elemento"""
+    """Indica quien se quedo con el último elemento"""
     fila = 0
     hayGanador = False
     cantidadElementos = 0

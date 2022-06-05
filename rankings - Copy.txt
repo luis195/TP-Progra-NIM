@@ -1,0 +1,4 @@
+Mariela;245
+Pedro;50
+Juan;20
+MACHINE;10

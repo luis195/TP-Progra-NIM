@@ -2,7 +2,7 @@
 
 
 def creartablero(filas):
-     """Crea el tablero del juego"""
+    """Crea el tablero del juego"""
     columnas = filas
     tablero = []
     for f in range(filas):
@@ -21,7 +21,7 @@ def creartablero(filas):
 
 
 def imprimirtablero(tablero):
-     """Imprime el tablero de juego"""
+    """Imprime el tablero de juego"""
     contadorLinea = 1
     for fila in tablero:
         print("%4s -->>" % contadorLinea, end="")

@@ -22,6 +22,7 @@ def leerNumeros (mensaje):
 
 def leeJugador (mensaje):
     """Ingresa el nombre de los jugadores"""
+    jugador = ""
     while True:
         try:
             jugador= input (mensaje)
