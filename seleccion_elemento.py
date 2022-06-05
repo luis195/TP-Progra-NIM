@@ -28,7 +28,7 @@ def hay_ganador(tablero):
                 cantidadElementos = cantidadElementos + 1
             columna = columna + 1
         fila = fila + 1
-    if cantidadElementos == 1:
+    if cantidadElementos <= 1:
         hayGanador = True
     return hayGanador
 
