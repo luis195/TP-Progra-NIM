@@ -4,7 +4,7 @@ import utilidades
 import presentacion
 import ranking
 
-ranking.cargar_rankings()
+tablaRankings = ranking.cargar_rankings()
 
 presentacion.imprimirTitulo()
 
@@ -40,12 +40,12 @@ while not (seleccion_elemento.hay_ganador(juegoTablero)):
 
 print("El Jugador " + jugadorSiguiente + " ha ganado")
 
-rankingGanador = ranking.obtener_ranking_jugador(jugadorSiguiente)
+rankingGanador = ranking.obtener_ranking_jugador(jugadorSiguiente, tablaRankings)
 
 rankingGanador += 1
 
-ranking.actualizar_ranking_jugador(jugadorSiguiente, rankingGanador)
+ranking.actualizar_ranking_jugador(jugadorSiguiente, rankingGanador, tablaRankings)
 
-ranking.grabar_rankings()
+ranking.grabar_rankings(tablaRankings)
 
-ranking.imprimir_ranking()
+ranking.imprimir_ranking(tablaRankings)

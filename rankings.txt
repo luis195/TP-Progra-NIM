@@ -2,4 +2,4 @@ Mariela;246
 Pedro;50
 Juan;34
 MACHINE;10
-Mario;2
+Mario;3
