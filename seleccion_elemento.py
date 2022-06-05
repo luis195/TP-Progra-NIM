@@ -8,11 +8,11 @@ def quitarelemento(tablero):
     filaSeleccion = utilidades.leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: \n")
     numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: \n")
 
-    tablero[filaSeleccion - 1].count('|') - 1
-
+    posicionAborrar = tablero[filaSeleccion - 1].count('|') - 1
     while numeroElementosEliminar > 0:
-        tablero[filaSeleccion - 1][numeroElementosEliminar - 1] = ' '
-        numeroElementosEliminar = numeroElementosEliminar - 1
+        tablero[filaSeleccion - 1][posicionAborrar] = ' '
+        numeroElementosEliminar -=  1
+        posicionAborrar -= 1
     return tablero
 
 

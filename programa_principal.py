@@ -7,12 +7,20 @@ import presentacion
 
 presentacion.imprimirTitulo()
 
+modoJugadores = presentacion.seleccionContricante()
+
 CantidadFilas = utilidades.leerNumeros ('Ingrese la cantidad de filas que va tener el tablero: ')
 
 juegoTablero = tablero.creartablero(CantidadFilas)
 tablero.imprimirtablero(juegoTablero)
-jugador1 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 1: ')
-jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
+
+if (modoJugadores == presentacion.__MODO_HUMANO_HUMANO__):
+    jugador1 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 1: ')
+    jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
+else:
+    jugador1 = presentacion.__NOMBRE_MAQUINA__
+    jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
+
 jugadorSiguiente = jugador1
 while not (seleccion_elemento.hay_ganador(juegoTablero)):
 

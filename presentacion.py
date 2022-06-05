@@ -1,3 +1,7 @@
+__MODO_HUMANO_HUMANO__ = 1
+__MODO_HUMANO_MAQUINA__ = 2
+__NOMBRE_MAQUINA__ = "MAQUINA"
+
 
 def imprimirTitulo ():
 
