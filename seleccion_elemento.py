@@ -37,11 +37,11 @@ def rankingDelJugador ():
         archivo= open ('Ranking.txt', 'wt')
 
         contador= 1
-        jugador= leeJugador ('Ingrese el nombre del jugador:')
+        jugador= leeJugador ('Ingrese el nombre del Primer jugador:')
 
         while contador < 2:
             archivo.write (jugador + '\n')
-            jugador= leeJugador ('Ingrese el nombre del jugador:')
+            jugador= leeJugador ('Ingrese el nombre del Segundo jugador:')
             contador += 1
                         
     
