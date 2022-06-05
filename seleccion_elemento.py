@@ -5,8 +5,8 @@ import utilidades
 
 def quitarelemento(tablero):
     """Elimna filas del tablero"""
-    filaSeleccion = utilidades.leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: \n")
-    numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: \n")
+    filaSeleccion = utilidades.leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: ")
+    numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: ")
 
     posicionAborrar = tablero[filaSeleccion - 1].count('|') - 1
     while numeroElementosEliminar > 0:

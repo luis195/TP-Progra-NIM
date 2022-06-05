@@ -25,10 +25,13 @@ def imprimirTitulo ():
 
 def seleccionContricante ():
 
-    contricante = "Contra quién quieres jugar"
+    contricante = "CONTRA QUIEN VA JUGAR"
     contricante1 = contricante.center(70, "=")
     print(contricante1)
+    print ('')
     print ("1.- Contra otro jugador / 2.-  Contra la máquina ")
+    print ('')
+    
     numero = -1
     while True:
         try:
