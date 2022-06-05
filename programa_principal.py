@@ -15,7 +15,7 @@ CantidadFilas = utilidades.leerNumeros ('Ingrese la cantidad de filas que va ten
 juegoTablero = tablero.creartablero(CantidadFilas)
 tablero.imprimirtablero(juegoTablero)
 
-dificultad_modo_maquina = -1
+dificultad_modo_maquina = -1 # inicializar la variable en algo diferente de los niveles
 
 if (modoJugadores == presentacion.__MODO_HUMANO_HUMANO__):
     jugador1 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador: ')
@@ -23,9 +23,13 @@ if (modoJugadores == presentacion.__MODO_HUMANO_HUMANO__):
 else:
     jugador1 = presentacion.__NOMBRE_MAQUINA__
     dificultad_modo_maquina = utilidades.leerNumeros('Ingrese el nivel de dificultad deseado (1-Facil | 2-Intermedio | 3-Dificil): ')
-    # FALTA VALIDAR QUE ESTE ENTRE 1 y 3
+    while dificultad_modo_maquina < 0 or dificultad_modo_maquina > 3:
+        print ('La opciones elegidas deben estar entre 1 a 3')
+        dificultad_modo_maquina = utilidades.leerNumeros('Ingrese el nivel de dificultad deseado (1-Facil | 2-Intermedio | 3-Dificil): ')
+        
 
-    jugador2 = utilidades.leeJugador ('Ingrese el nombre del primer Jugador 2: ')
+
+    jugador2 = utilidades.leeJugador ('Ingrese el nombre del Segundo Jugador: ')
 
 jugadorSiguiente = jugador1
 while not (seleccion_elemento.hay_ganador(juegoTablero)):
