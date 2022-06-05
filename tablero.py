@@ -17,10 +17,14 @@ def creartablero(filas):
 
 
 def imprimirtablero(tablero):
+    contadorLinea = 1
     for fila in tablero:
+        print("%4s -->>" % contadorLinea, end="")
         for elemento in fila:
             print("%4s" % elemento, end="")
         print()
+        
+        contadorLinea += 1
 
 
 
