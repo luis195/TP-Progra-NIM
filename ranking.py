@@ -41,10 +41,18 @@ def grabar_rankings():
 def actualizar_ranking_jugador(nombre_jugador, nuevo_ranking):
     try:
         assert nuevo_ranking >= 0
+        nuevoGanador = True
         for i in range (len(__tablaRankings__)):
             if __tablaRankings__[i][0] == nombre_jugador:
                 __tablaRankings__[i][1] = nuevo_ranking
+                nuevoGanador = False
                 break
+
+        if nuevoGanador:
+            registroNuevo = []
+            registroNuevo.append(nombre_jugador)
+            registroNuevo.append("1")
+            __tablaRankings__.append(registroNuevo)
     except:
         print ("ERROR: El nuevo ranking tiene que ser mayor o igual a 0.")
 
@@ -53,6 +61,7 @@ def obtener_ranking_jugador(nombre_jugador):
     for jugador in __tablaRankings__:
         if jugador[0] == nombre_jugador:
             resultado = jugador[1]
+            break
 
     return resultado
 

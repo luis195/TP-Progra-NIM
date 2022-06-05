@@ -1,4 +1,5 @@
 Mariela;245
 Pedro;50
-Juan;27
+Juan;30
 MACHINE;10
+Mario;2
