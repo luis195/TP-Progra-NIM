@@ -1,21 +1,23 @@
-'''Módulo para el manejo del archivo de ranking con los jugadores y sus puntajes.'''
+"""Módulo para el manejo del archivo de ranking con los jugadores y sus puntajes."""
+
 
 def cargar_rankings():
     try:
         archivoRankings = open("rankings.txt", "rt")
-        tablaRankings = [] # Lista de listas. Cada posición tiene una lista donde cada elemento contiene: 0 - Nombre Jugador y en 1 - Ranking de ese jugador
+        tablaRankings = []  # Lista de listas. Cada posición tiene una lista donde cada elemento contiene: 0 - Nombre
+        # Jugador y en 1 - Ranking de ese jugador
         for linea in archivoRankings:
             linea = linea.rstrip("\n")
             linea = linea.replace(" ", "")
-            
-            if (linea == ""):
+
+            if linea == "":
                 continue
 
             registroRanking = linea.split(";")
-            registroRanking[1] = int(registroRanking[1]) 
+            registroRanking[1] = int(registroRanking[1])
             tablaRankings.append(registroRanking)
         return tablaRankings
-        
+
     except:
         print("Error")
     finally:
@@ -24,13 +26,14 @@ def cargar_rankings():
         except NameError:
             pass
 
+
 def grabar_rankings(tablaRankings):
     archivoRankings = None
     try:
         assert len(tablaRankings) > 0
 
-        archivoRankings = open("rankings.txt", "wt") # Sobrescribe el archivo de rankings
-        
+        archivoRankings = open("rankings.txt", "wt")  # Sobrescribe el archivo de rankings
+
         for registroRanking in tablaRankings:
             linea = registroRanking[0] + ";" + str(registroRanking[1]) + "\n"
             archivoRankings.write(linea)
@@ -40,11 +43,12 @@ def grabar_rankings(tablaRankings):
         if archivoRankings:
             archivoRankings.close()
 
+
 def actualizar_ranking_jugador(nombre_jugador, nuevo_ranking, tablaRankings):
     try:
         assert nuevo_ranking >= 0
         nuevoGanador = True
-        for i in range (len(tablaRankings)):
+        for i in range(len(tablaRankings)):
             if tablaRankings[i][0] == nombre_jugador:
                 tablaRankings[i][1] = nuevo_ranking
                 nuevoGanador = False
@@ -56,7 +60,8 @@ def actualizar_ranking_jugador(nombre_jugador, nuevo_ranking, tablaRankings):
             registroNuevo.append("1")
             tablaRankings.append(registroNuevo)
     except:
-        print ("ERROR: El nuevo ranking tiene que ser mayor o igual a 0.")
+        print("ERROR: El nuevo ranking tiene que ser mayor o igual a 0.")
+
 
 def obtener_ranking_jugador(nombre_jugador, tablaRankings):
     resultado = -1
@@ -66,6 +71,7 @@ def obtener_ranking_jugador(nombre_jugador, tablaRankings):
             break
 
     return resultado
+
 
 def imprimir_ranking(tablaRankings):
     print("Listado de rankings")

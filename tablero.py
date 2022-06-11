@@ -1,4 +1,6 @@
-'''CREA EL TABLERO DE JUEGO NIM '''
+"""CREA EL TABLERO DE JUEGO NIM """
+
+import colores as paleta
 
 
 def creartablero(filas):
@@ -24,13 +26,14 @@ def imprimirtablero(tablero):
     """Imprime el tablero de juego"""
     contadorLinea = 1
     for fila in tablero:
-        print("%4s -->>" % contadorLinea, end="")
+        print(paleta.colores["rojo"] + "%4s -->>" % contadorLinea, end="" + paleta.colores["reset"])
         for elemento in fila:
-            print("%4s" % elemento, end="")
+            if fila.count("|") % 2 == 0 and fila.count("|") % 3 != 0:
+                print(paleta.colores["amarillo"] + "%4s" % elemento, end="" + paleta.colores["reset"])
+            elif fila.count("|") % 3 == 0:
+                print(paleta.colores["magenta"] + "%4s" % elemento, end="" + paleta.colores["reset"])
+            else:
+                print(paleta.colores["cyan"] + "%4s" % elemento, end="" + paleta.colores["reset"])
         print()
-        
+
         contadorLinea += 1
-
-
-
-
