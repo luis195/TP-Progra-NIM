@@ -28,7 +28,7 @@ def imprimirtablero(tablero):
     for fila in tablero:
         print(paleta.colores["rojo"] + "%4s -->>" % contadorLinea, end="" + paleta.colores["reset"])
         for elemento in fila:
-            if tablero.index(fila) % 2 == 0 and tablero.index(fila) % 3 != 0:
+            if tablero.index(fila) % 2 ==0 and tablero.index(fila) % 3 != 0:
                 print(paleta.colores["amarillo"] + "%4s" % elemento, end="" + paleta.colores["reset"])
             elif tablero.index(fila) % 3 == 0:
                 print(paleta.colores["magenta"] + "%4s" % elemento, end="" + paleta.colores["reset"])

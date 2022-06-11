@@ -34,4 +34,4 @@ arreglo = ['01',
            '0100',
            '0101',
            '0110']
-print(len(arreglo[5]))
+print(len(arreglo[4]))
