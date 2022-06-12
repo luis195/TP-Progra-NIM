@@ -4,7 +4,6 @@ import utilidades
 import presentacion
 import ranking
 
-
 tablaRankings = ranking.cargar_rankings()
 
 presentacion.imprimirTitulo()
@@ -33,12 +32,14 @@ else:
     jugador2 = utilidades.leeJugador('Ingrese el nombre del Segundo Jugador: ')
 
 jugadorSiguiente = jugador1
+turno = 0
 while not (seleccion_elemento.hay_ganador(juegoTablero)):
 
     print("Jugador " + jugadorSiguiente + " es su turno")
 
     if jugadorSiguiente == presentacion.__NOMBRE_MAQUINA__:
-        seleccion_elemento.quitarelementoMaquina(juegoTablero, dificultad_modo_maquina)
+        turno = turno + 1
+        seleccion_elemento.quitarelementoMaquina(juegoTablero, dificultad_modo_maquina, turno)
     else:
         seleccion_elemento.quitarelemento(juegoTablero)
     tablero.imprimirtablero(juegoTablero)

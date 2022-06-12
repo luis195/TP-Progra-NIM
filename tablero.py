@@ -28,7 +28,7 @@ def imprimirtablero(tablero):
     for fila in tablero:
         print(paleta.colores["rojo"] + "%4s -->>" % contadorLinea, end="" + paleta.colores["reset"])
         for elemento in fila:
-            if tablero.index(fila) % 2 ==0 and tablero.index(fila) % 3 != 0:
+            if tablero.index(fila) % 2 == 0 and tablero.index(fila) % 3 != 0:
                 print(paleta.colores["amarillo"] + "%4s" % elemento, end="" + paleta.colores["reset"])
             elif tablero.index(fila) % 3 == 0:
                 print(paleta.colores["magenta"] + "%4s" % elemento, end="" + paleta.colores["reset"])
@@ -38,11 +38,12 @@ def imprimirtablero(tablero):
 
         contadorLinea += 1
 
+
 def obtener_cantidades_por_fila(tablero):
     resultado = []
-    
+
     for fila in tablero:
         cantidad_en_fila = fila.count("|")
         resultado.append(cantidad_en_fila)
-        
+
     return resultado

@@ -3,5 +3,6 @@ Pedro;50
 Juan;34
 MACHINE;10
 Mario;4
-MAQUINA;6
+MAQUINA;10
 Maru;1
+luis;1
