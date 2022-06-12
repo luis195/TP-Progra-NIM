@@ -5,4 +5,4 @@ MACHINE;10
 Mario;4
 MAQUINA;10
 Maru;1
-luis;1
+luis;2
