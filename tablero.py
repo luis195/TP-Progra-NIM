@@ -37,3 +37,12 @@ def imprimirtablero(tablero):
         print()
 
         contadorLinea += 1
+
+def obtener_cantidades_por_fila(tablero):
+    resultado = []
+    
+    for fila in tablero:
+        cantidad_en_fila = fila.count("|")
+        resultado.append(cantidad_en_fila)
+        
+    return resultado

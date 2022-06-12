@@ -6,7 +6,7 @@ def leerNumeros (mensaje):
         try:
             nro= int (input (mensaje))
             
-            assert nro >= 0 
+            assert nro > 0 
             break
                    
         except ValueError:
