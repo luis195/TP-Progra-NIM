@@ -10,10 +10,12 @@ def quitarelemento(tablero):
     """Elimna filas del tablero"""
     while True:
         try:
-            filaSeleccion = utilidades.leerNumeros("Introdzca el número de la fila de donde desea eliminar elementos: ")
-            numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: ")
+            filaSeleccion = utilidades.leerNumeros("Introduzca el número de la fila de donde desea eliminar elementos: ")
 
             assert filaSeleccion > 0 and filaSeleccion <= len(tablero), "El número de fila excede rangos del tablero"
+
+            numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: ")
+
             assert numeroElementosEliminar <= tablero[filaSeleccion - 1].count('|'), "La cantidad de elementos de la " \
                                                                                      "fila es menor a la especificada "
 
@@ -42,7 +44,7 @@ def quitarelementoMaquina(tablero, dificultad, turno):
                 continue
             numeroElementosEliminar = random.randint(1, maxElementosEnFila)
             break
-    elif dificultad == 2:  # CASO 2 (Intermedio): La máquina mueve mitad random y mitad ???
+    elif dificultad == 2:  # CASO 2 (Intermedio): La máquina mueve mitad random y mitad estrategia ganadora
         if turno % 2 == 0:
             while True:
                 filaSeleccion = random.randint(1, len(tablero))
