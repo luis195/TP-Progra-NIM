@@ -75,29 +75,9 @@ def obtener_ranking_jugador(nombre_jugador, tablaRankings):
 
 def imprimir_ranking(tablaRankings):
     print("Listado de rankings")
+    print ()
     for jugador in tablaRankings:
         print(jugador[0] + "  " + str(jugador[1]))
 
 
-''' Test unitarios
 
-
-tablaRankings = cargar_rankings()
-
-imprimir_ranking(tablaRankings)
-
-ranking = obtener_ranking_jugador("Juan", tablaRankings)
-print("El ranking de Juan es: ", ranking)
-
-ranking += 1
-
-actualizar_ranking_jugador("Juan", ranking, tablaRankings)
-
-imprimir_ranking(tablaRankings)
-
-grabar_rankings(tablaRankings)
-
-tablaRankings = cargar_rankings()
-
-imprimir_ranking(tablaRankings)
-'''

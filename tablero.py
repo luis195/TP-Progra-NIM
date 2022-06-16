@@ -1,6 +1,6 @@
 """CREA EL TABLERO DE JUEGO NIM """
 
-import colores as paleta
+import colores as paleta  # con el as se cambio el alias porque no podiamos dar el mismo nombre tablero, de esta manera lo diferenciamos del tablero
 
 
 def creartablero(filas):
@@ -11,24 +11,24 @@ def creartablero(filas):
         tablero.append([])
         for c in range(columnas):
             tablero[f].append(' ')
-    p = 0
-    while p < len(tablero):
-        q = 0
-        while q <= p:
-            tablero[p][q] = '|'
-            q = q + 1
-        p = p + 1
+    contadorFilas = 0
+    while contadorFilas < len(tablero):
+        contadorColumnas = 0
+        while contadorColumnas <= contadorFilas:
+            tablero[contadorFilas][contadorColumnas] = '|'
+            contadorColumnas += 1
+        contadorFilas += 1
 
     return tablero
 
 
 def imprimirtablero(tablero):
     """Imprime el tablero de juego"""
-    contadorLinea = 1
+    contadorLinea = 1 # Para imprimir los números de la fila
     for fila in tablero:
         print(paleta.colores["rojo"] + "%4s -->>" % contadorLinea, end="" + paleta.colores["reset"])
         for elemento in fila:
-            if contadorLinea % 2 == 0 and contadorLinea % 3 != 0:
+            if contadorLinea % 2 == 0 and contadorLinea % 3 != 0: # para que pueda intercambiarse los 3 colores
                 print(paleta.colores["amarillo"] + "%4s" % elemento, end="" + paleta.colores["reset"])
             elif contadorLinea % 3 == 0:
                 print(paleta.colores["magenta"] + "%4s" % elemento, end="" + paleta.colores["reset"])
@@ -40,6 +40,7 @@ def imprimirtablero(tablero):
 
 
 def obtener_cantidades_por_fila(tablero):
+    '''Para ver la cantidad de palitos en cada fila en base al tablero y devuelve una lista'''
     resultado = []
 
     for fila in tablero:

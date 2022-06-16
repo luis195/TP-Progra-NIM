@@ -3,13 +3,14 @@ import tablero
 
 
 def suma_nim(cantidades_por_fila_tablero):
+    '''Suma de los resultados con el operador Xor'''
     resultado = -1
 
     if len(cantidades_por_fila_tablero) == 1:
         return cantidades_por_fila_tablero[0]
     else:
         resultado_xor = cantidades_por_fila_tablero[0] ^ cantidades_por_fila_tablero[1]
-        cantidades_por_fila_tablero = cantidades_por_fila_tablero[2:]
+        cantidades_por_fila_tablero = cantidades_por_fila_tablero[2:] 
         cantidades_por_fila_tablero.insert(0, resultado_xor)
         resultado = suma_nim(cantidades_por_fila_tablero)
 
@@ -27,7 +28,7 @@ def estrategia_ganadora(cantidades_por_fila_tablero):
     """
 
     es_casi_final_del_juego = False
-    contador_mayores_1 = sum(1 for x in cantidades_por_fila_tablero if x > 1)
+    contador_mayores_1 = sum(1 for x in cantidades_por_fila_tablero if x > 1)  # mientras haya mas de un palito por fila
     es_casi_final_del_juego = (contador_mayores_1 <= 1)
 
     # La suma nim devolverá la jugada correcta para

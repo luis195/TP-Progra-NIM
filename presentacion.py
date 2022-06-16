@@ -1,9 +1,11 @@
-__MODO_HUMANO_HUMANO__ = 1
+# Son varialbles globales ya que se va utilizar en todo el programa 
+__MODO_HUMANO_HUMANO__ = 1        
 __MODO_HUMANO_MAQUINA__ = 2
 __NOMBRE_MAQUINA__ = "MAQUINA"
 
 
 def imprimirTitulo():
+    '''Imprime las pautas del juego'''
     titulo = "JUEGO DE NIM"
     titulo1 = titulo.center(65, "=")
     print(titulo1)
@@ -23,6 +25,7 @@ def imprimirTitulo():
 
 
 def seleccionContricante():
+    '''Permite la selección del contricante humano o máquina'''
     contricante = "CONTRA QUIEN VA JUGAR"
     contricante1 = contricante.center(70, "=")
     print(contricante1)
@@ -30,14 +33,14 @@ def seleccionContricante():
     print("1.- Contra otro jugador / 2.-  Contra la máquina ")
     print('')
 
-    numero = -1
+    numero = -1  #valor por defecto para evitar el doble return
     while True:
         try:
             numero = int(input('Seleccione contra quién va jugar: '))
 
             assert numero == 1 or numero == 2
             break
-        except (ValueError, AssertionError) as e:
+        except (ValueError, AssertionError) as e:  # para poder llamar a más de dos excepciones 
             print('Debe ingresar la opción 1 o 2')
             intento = input('Desea Ingresar otra vez: S/N:')
             if intento.upper() == 'N':
