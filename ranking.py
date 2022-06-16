@@ -2,6 +2,7 @@
 
 
 def cargar_rankings():
+    '''Lee archivo TXT y devuelve una lista con los rankings'''
     try:
         archivoRankings = open("rankings.txt", "rt")
         tablaRankings = []  # Lista de listas. Cada posición tiene una lista donde cada elemento contiene: 0 - Nombre
@@ -14,7 +15,7 @@ def cargar_rankings():
                 continue
 
             registroRanking = linea.split(";")
-            registroRanking[1] = int(registroRanking[1])
+            registroRanking[1] = int(registroRanking[1]) # conversion en string a numero, para poder ordenarlo
             tablaRankings.append(registroRanking)
         return tablaRankings
 
@@ -28,7 +29,7 @@ def cargar_rankings():
 
 
 def grabar_rankings(tablaRankings):
-    archivoRankings = None
+    '''Dado una tabla pasado por parametro graba el contenido de esa tabla en TXT'''
     try:
         assert len(tablaRankings) > 0
 
@@ -40,11 +41,14 @@ def grabar_rankings(tablaRankings):
     except:
         print("Error")
     finally:
-        if archivoRankings:
+        try:
             archivoRankings.close()
+        except NameError:
+            pass
 
 
 def actualizar_ranking_jugador(nombre_jugador, nuevo_ranking, tablaRankings):
+    '''Dado el nombre de un jugador actualiza su entrada en la tabla de rankings con el valor informado como parámetro'''
     try:
         assert nuevo_ranking >= 0
         nuevoGanador = True
@@ -64,6 +68,7 @@ def actualizar_ranking_jugador(nombre_jugador, nuevo_ranking, tablaRankings):
 
 
 def obtener_ranking_jugador(nombre_jugador, tablaRankings):
+    '''Actualiza el resultado de rankings'''
     resultado = -1
     for jugador in tablaRankings:
         if jugador[0] == nombre_jugador:
@@ -74,10 +79,32 @@ def obtener_ranking_jugador(nombre_jugador, tablaRankings):
 
 
 def imprimir_ranking(tablaRankings):
+    '''Imprime los resultados del rankings'''
     print("Listado de rankings")
     print ()
     for jugador in tablaRankings:
         print(jugador[0] + "  " + str(jugador[1]))
 
 
+''' Test unitarios
 
+
+tablaRankings = cargar_rankings()
+
+imprimir_ranking(tablaRankings)
+
+ranking = obtener_ranking_jugador("Juan", tablaRankings)
+print("El ranking de Juan es: ", ranking)
+
+ranking += 1
+
+actualizar_ranking_jugador("Juan", ranking, tablaRankings)
+
+imprimir_ranking(tablaRankings)
+
+grabar_rankings(tablaRankings)
+
+tablaRankings = cargar_rankings()
+
+imprimir_ranking(tablaRankings)
+'''

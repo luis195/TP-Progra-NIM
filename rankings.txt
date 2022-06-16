@@ -1,8 +1,1 @@
-Mariela;247
-Pedro;50
-Juan;34
-MACHINE;10
-Mario;4
-MAQUINA;12
-Maru;2
-luis;2
+MAQUINA;1
