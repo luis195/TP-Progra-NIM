@@ -1,5 +1,5 @@
 # Son varialbles globales ya que se va utilizar en todo el programa 
-__MODO_HUMANO_HUMANO__ = 1        
+__MODO_HUMANO_HUMANO__ = 1
 __MODO_HUMANO_MAQUINA__ = 2
 __NOMBRE_MAQUINA__ = "MAQUINA"
 
@@ -25,7 +25,7 @@ def imprimirTitulo():
 
 
 def seleccionContricante():
-    '''Permite la selección del contricante humano o máquina'''
+    """Permite la selección del contricante humano o máquina"""
     contricante = "CONTRA QUIEN VA JUGAR"
     contricante1 = contricante.center(70, "=")
     print(contricante1)
@@ -33,7 +33,7 @@ def seleccionContricante():
     print("1.- Contra otro jugador / 2.-  Contra la máquina ")
     print('')
 
-    numero = -1  #valor por defecto para evitar el doble return
+    numero = -1  # valor por defecto para evitar el doble return
     while True:
         try:
             numero = int(input('Seleccione contra quién va jugar: '))

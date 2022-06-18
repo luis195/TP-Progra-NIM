@@ -3,7 +3,7 @@ import tablero
 
 
 def suma_nim(cantidades_por_fila_tablero):
-    '''Suma de los resultados con el operador Xor'''
+    """Suma de los resultados con el operador Xor"""
     resultado = -1
 
     if len(cantidades_por_fila_tablero) == 1:

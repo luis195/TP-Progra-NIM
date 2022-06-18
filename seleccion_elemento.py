@@ -11,15 +11,17 @@ def quitarelemento(tablero):
     while True:
         try:
             # Para validar la seleccionar la fila
-            filaSeleccion = utilidades.leerNumeros("Introduzca el número de la fila de donde desea eliminar elementos: ")
+            filaSeleccion = utilidades.leerNumeros(
+                "Introduzca el número de la fila de donde desea eliminar elementos: ")
 
             assert filaSeleccion > 0 and filaSeleccion <= len(tablero), "El número de fila excede rangos del tablero"
 
-            #Para validar la cantidad de elementos que se elimina sean los que quedaron en el tablero 
+            # Para validar la cantidad de elementos que se elimina sean los que quedaron en el tablero
             numeroElementosEliminar = utilidades.leerNumeros("introduzca cuantos elementos desea eliminar de la fila: ")
-            
-            assert numeroElementosEliminar <= tablero[filaSeleccion - 1].count('|'), "La cantidad de elementos a eliminar debe" \
-                                                                                      "   ser igual o menor a la cantidad de palitos existentes"
+
+            assert numeroElementosEliminar <= tablero[filaSeleccion - 1].count(
+                '|'), "La cantidad de elementos a eliminar debe" \
+                      "   ser igual o menor a la cantidad de palitos existentes"
 
             posicionAborrar = tablero[filaSeleccion - 1].count('|') - 1
             while numeroElementosEliminar > 0:
@@ -69,6 +71,9 @@ def quitarelementoMaquina(tablero, dificultad, turno):
         tupla_ganadora = estrategia_maquina.estrategia_ganadora(cantidades_por_fila_tablero)
         filaSeleccion = tupla_ganadora[0] + 1
         numeroElementosEliminar = tupla_ganadora[1]
+
+    print("Fila escogida por el jugador Máquina: ", filaSeleccion)
+    print("Cantidad de elementos eliminados por el jugador Maquina: ", numeroElementosEliminar)
 
     posicionAborrar = tablero[filaSeleccion - 1].count('|') - 1
     while numeroElementosEliminar > 0:
