@@ -33,17 +33,18 @@ def seleccionContricante():
     print("1.- Contra otro jugador / 2.-  Contra la máquina ")
     print('')
 
-    numero = -1  # valor por defecto para evitar el doble return
+    
     while True:
         try:
             numero = int(input('Seleccione contra quién va jugar: '))
 
             assert numero == 1 or numero == 2
             break
-        except (ValueError, AssertionError) as e:  # para poder llamar a más de dos excepciones 
+        except ValueError:
+            print ('Dato invalido, solo puede ingresarse números')
+           
+        except AssertionError: 
             print('Debe ingresar la opción 1 o 2')
-            intento = input('Desea Ingresar otra vez: S/N:')
-            if intento.upper() == 'N':
-                pass
+            
 
     return numero

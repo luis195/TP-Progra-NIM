@@ -13,7 +13,8 @@ def leerNumeros (mensaje):
             print ('Dato invalido, solo puede ingresarse números')
             intento= input ('Desea ingresarlo otra vez? (S/N): ')
             if intento.upper()== "N":
-                pass
+                print("Saliste del Juego")
+                print(quit())
         except AssertionError:
             print ('El número debe ser mayor a cero')
             
@@ -22,19 +23,16 @@ def leerNumeros (mensaje):
 
 def leeJugador (mensaje):
     """Ingresa el nombre de los jugadores"""
-    jugador = ""
+    
     while True:
         try:
             jugador= input (mensaje)
             assert jugador.isalpha ()
             break
-        except ValueError:
-            print ('Dato invalido, solo puede ingresarse letras')
-            intento= input ('Desea ingresarlo otra vez? (S/N): ')
-            if intento.upper()== "N":
-                pass
+               
         except AssertionError:
-            print ('Solo se permiten letras')
+            print ('Dato invalido, solo puede ingresarse letras')
+            
             
     return jugador
     

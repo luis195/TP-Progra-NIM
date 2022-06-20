@@ -1,7 +1,7 @@
-import seleccion_elemento
-import tablero
-import utilidades
 import presentacion
+import utilidades
+import tablero
+import seleccion_elemento
 import ranking
 
 tablaRankings = ranking.cargar_rankings()
